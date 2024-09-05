@@ -10,11 +10,14 @@ public class testePilha {
 
         for (int i = 0; i < 10; i++) {
             minhaPilha.empilhar(i);
-            System.out.println(i);
+            // System.out.println(i);
         }
 
-        System.out.println("\n===================");
-        System.out.print(minhaPilha.desempilha());
+        System.out.println("\n===================\n");
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println(minhaPilha.desempilha());
+        }
 
     }
 }

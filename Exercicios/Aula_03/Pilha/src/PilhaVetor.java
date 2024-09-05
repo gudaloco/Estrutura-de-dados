@@ -20,16 +20,18 @@ public class PilhaVetor {
 
     //Empilha o item no topo da pilha se não tiver cheia
     public void empilhar(Object item) {
-        if (!pilhaCheia())
+        if (!pilhaCheia()){
             elementos[indice] = item;
+            System.out.println(elementos[indice]);
         indice++;
+        }
     }
 
     public Object desempilha() {
         // Desempilhar remove o item do topo da pilha e retorna o valor
         //se não estiver vazia
         if(!pilhaVazia()){
-            i--;
+            indice--;
             return elementos[indice];
         }
         else return null;
@@ -44,7 +46,7 @@ public class PilhaVetor {
     }
 
     public boolean pilhaCheia() {
-        if (indice == elementos.length - 1)
+        if (indice == elementos.length)
             return true;
         else
             return false;
