@@ -7,7 +7,7 @@ public class Pilha {
 
     //Construtor
     public Pilha(){
-        elementos=new ArrayList<Object>();
+        this.elementos=new ArrayList<Object>();
     }
 
     //metodo Verifica Pilha Cheia
@@ -16,16 +16,12 @@ public class Pilha {
         else return                    false;
     }
     public void empilhar(Object item){
-
+        elementos.add(item);
     }
 
     public Object desempilhar(){
-        
-    }
-
-
-
-    public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        if(pilhaVazia())
+        return elementos.remove(elementos.size() -1);
+        return nulll;
     }
 }
