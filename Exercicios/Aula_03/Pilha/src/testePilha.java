@@ -19,5 +19,22 @@ public class testePilha {
             System.out.println(minhaPilha.desempilha());
         }
 
+        //*********************Pilha com lista************************
+
+    Pilha minhaPilha2 = new Pilha();
+    System.out.println("pilha esta vazia?: ");
+
+    System.out.println("pilha esta Cheia?: ");
+
+    for (int i = 0; i < 10; i++) {
+        minhaPilha2.empilhar(i);
+        // System.out.println(i);
+    }
+    
+    System.out.println("eeee");
+    for (int i = 0; i < 10; i++) {
+        //System.out.print(minhaPilha2.desempilha());
+    }
+
     }
 }
