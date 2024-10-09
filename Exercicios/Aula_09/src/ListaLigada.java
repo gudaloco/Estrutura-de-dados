@@ -1,11 +1,11 @@
-public class Lista_Ligada {
+public class ListaLigada {
     private Node inicio;
     private Node fim;
     private int tamanho;
 
     // Criando um construtor para permitir instanciar
     // uma lista ligada vazia.
-    public Lista_Ligada() {
+    public ListaLigada() {
         inicio = null;
         fim = null;
         tamanho = 0;
@@ -41,20 +41,60 @@ public class Lista_Ligada {
 
     public void adicionar(Object info, int indice) {
         // adiciona na posição definida pelo indice.
-        Node aux, anterior;
-        Node novoNo;
+        Node novo, aux;
         if (indice == 0) {
-            aux inicio;
-            novoNo = new Node(info, aux);
-            inicio = novoNo;
+            // se índice for 0 irá adicionar na primeira posição
+            novo = new Node(info, inicio);
+            inicio = novo;
             tamanho++;
         } else if (indice < tamanho) {
-            // Retorna o Nó definido pelo indice
-            aux = percorreLista(indice);
-            novoNo = new Node(info, aux);
-            anterior = percorreLista(indice - 1);
-            anterior.setproximoNo(novoNo);
+            // Adiciona nas demais posições.
+            aux = percorreLista(indice - 1);
+            // aux aponta para o Nó que está na posição anterior
+            // a posição que será adicionada.
+            novo = new Node(info, aux.getproximoNo());
+            aux.setproximoNo(novo);
             tamanho++;
+        } else if (indice == tamanho) {
+            // Adiciona na ultima posição
+            adicionar(info);
+            tamanho++;
+        }
+    }
+
+    /*
+     * Node aux, anterior;
+     * Node novoNo;
+     * if (indice == 0) {
+     * aux inicio;
+     * novoNo = new Node(info, aux);
+     * inicio = novoNo;
+     * tamanho++;
+     * } else if (indice < tamanho) {
+     * // Retorna o Nó definido pelo indice
+     * aux = percorreLista(indice);
+     * novoNo = new Node(info, aux);
+     * anterior = percorreLista(indice - 1);
+     * anterior.setproximoNo(novoNo);
+     * tamanho++;
+     * }
+     * }
+     */
+
+    public void remover(int indice) {
+        if (indice == 0) {
+            inicio = inicio.getproximoNo();
+            tamanho--;
+
+        } else if (indice < tamanho - 1) {
+            Node aux = percorreLista(indice - 1);
+            aux.setproximoNo(aux.getproximoNo().getproximoNo());
+            tamanho--;
+        } else if (indice == tamanho - 1) {
+            Node aux = percorreLista(indice - 1);
+            aux.setproximoNo(null);
+            fim = aux;
+            tamanho--;
         }
     }
 
