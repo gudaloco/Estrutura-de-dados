@@ -62,25 +62,6 @@ public class ListaLigada {
         }
     }
 
-    /*
-     * Node aux, anterior;
-     * Node novoNo;
-     * if (indice == 0) {
-     * aux inicio;
-     * novoNo = new Node(info, aux);
-     * inicio = novoNo;
-     * tamanho++;
-     * } else if (indice < tamanho) {
-     * // Retorna o Nó definido pelo indice
-     * aux = percorreLista(indice);
-     * novoNo = new Node(info, aux);
-     * anterior = percorreLista(indice - 1);
-     * anterior.setproximoNo(novoNo);
-     * tamanho++;
-     * }
-     * }
-     */
-
     public void remover(int indice) {
         if (indice == 0) {
             inicio = inicio.getproximoNo();
