@@ -41,6 +41,8 @@ public class ListaDuplamenteLigada {
         } else if (indice < tamanho - 1) {
             NodeDuplo aux = percorreLista(indice);
             novoNo = new nodeDuplo(info, aux, aux.getAnterior());
+            aux.setAnterior(novoNo);
+            novoNo.getAnterior().setProximo(novoNo);
 
         }
     }
