@@ -2,6 +2,8 @@
 
 Diretorio para as aulas de Estrutura de dados do terceiro semestre de ADS facens.
 
+Estrutura de dados 0.2.1 Seila
+
 Estrutura de dados 0.2.0 Seila
 
 Estrutura de dados 0.1.9
